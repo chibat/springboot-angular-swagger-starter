@@ -9,6 +9,7 @@
 .project
 .settings
 .springBeans
+.bin
 
 ### IntelliJ IDEA ###
 .idea
@@ -23,3 +24,4 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+/bin/
