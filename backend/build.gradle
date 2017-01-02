@@ -50,7 +50,7 @@ dependencies {
 def SWAGGER_CLIENT_DIR = '../frontend/src/swagger';
 
 task cleanSwaggerCodegen(type: Delete) {
-    delete SWAGGER_CLIENT_DIR
+    delete fileTree(SWAGGER_CLIENT_DIR).include('**/*')
 }
 
 task swaggerCodegen(type: JavaExec) {
