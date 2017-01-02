@@ -1,4 +1,4 @@
-# Spring Boot + Angular2 + Swagger
+# Spring Boot + Angular2 + Swagger Example
 
 # Prerequisites
 
@@ -25,4 +25,3 @@ $ npm start
 Open following URL by Web browser.  
 http://localhost:4200/
 
-swagger で吐き出したコードが、baseUrl の指定を強制する。
