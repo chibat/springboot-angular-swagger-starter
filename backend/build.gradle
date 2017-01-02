@@ -1,13 +1,13 @@
 buildscript {
-	ext {
-		springBootVersion = '1.4.3.RELEASE'
-	}
-	repositories {
-		mavenCentral()
-	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-	}
+    ext {
+        springBootVersion = '1.4.3.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
 }
 
 apply plugin: 'java'
@@ -15,62 +15,62 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 
 jar {
-	baseName = 'app'
-	version = '0.0.1-SNAPSHOT'
+    baseName = 'app'
+    version = '0.0.1-SNAPSHOT'
 }
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-web')
-	compile 'io.springfox:springfox-swagger2:2.6.1'
-	testCompile('org.springframework.boot:spring-boot-starter-test')
-	testCompile 'io.springfox:springfox-staticdocs:2.6.1'
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile 'io.springfox:springfox-swagger2:2.6.1'
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile 'io.springfox:springfox-staticdocs:2.6.1'
 }
 
 task generateSwaggerSpec(type: Test, dependsOn: testClasses) {
-	filter {
-		includeTestsMatching "app.SwaggerSpecGenerator"
-	}
+    filter {
+        includeTestsMatching "app.SwaggerSpecGenerator"
+    }
 }
 
 configurations {
-	swaggercodegen
+    swaggercodegen
 }
 
 dependencies {
-	swaggercodegen 'io.swagger:swagger-codegen-cli:2.2.1'
+    swaggercodegen 'io.swagger:swagger-codegen-cli:2.2.1'
 }
 
 def SWAGGER_CLIENT_DIR = '../frontend/src/swagger';
 
 task cleanSwaggerCodegen(type: Delete) {
-	delete SWAGGER_CLIENT_DIR
+    delete SWAGGER_CLIENT_DIR
 }
 
 task swaggerCodegen(type: JavaExec) {
-	classpath = configurations.swaggercodegen
-	main = 'io.swagger.codegen.SwaggerCodegen'
-		args('generate',
-		'-l', 'typescript-angular2',
-		'-i', 'publications/swagger.json',
-		'-o', SWAGGER_CLIENT_DIR)
+    classpath = configurations.swaggercodegen
+    main = 'io.swagger.codegen.SwaggerCodegen'
+        args('generate',
+        '-l', 'typescript-angular2',
+        '-i', 'publications/swagger.json',
+        '-o', SWAGGER_CLIENT_DIR)
 }
 
 swaggerCodegen.dependsOn cleanSwaggerCodegen
 swaggerCodegen.dependsOn generateSwaggerSpec
 
 task compileFrontend(type:Exec) {
-	workingDir '../frontend'
-	ant.condition(property: "isWindows", value: true) { os(family: "windows") }
-	commandLine(ant.properties.isWindows ?
-		['cmd', '/c', 'ng', 'build', '--aot', '--target=production'] :
-		['ng', 'build', '--aot', '--target=production'])
+    workingDir '../frontend'
+    ant.condition(property: "isWindows", value: true) { os(family: "windows") }
+    commandLine(ant.properties.isWindows ?
+        ['cmd', '/c', 'ng', 'build', '--aot', '--target=production'] :
+        ['ng', 'build', '--aot', '--target=production'])
 }
 
 jar.dependsOn compileFrontend

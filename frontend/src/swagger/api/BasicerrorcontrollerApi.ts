@@ -44,10 +44,10 @@ export class BasicerrorcontrollerApi {
     }
 
     /**
-     * error
+     * errorHtml
      * 
      */
-    public errorUsingDELETE (extraHttpRequestParams?: any ) : Observable<{ [key: string]: any; }> {
+    public errorHtmlUsingDELETE (extraHttpRequestParams?: any ) : Observable<models.ModelAndView> {
         const path = this.basePath + '/error';
 
         let queryParameters = new URLSearchParams();
@@ -69,10 +69,10 @@ export class BasicerrorcontrollerApi {
     }
 
     /**
-     * error
+     * errorHtml
      * 
      */
-    public errorUsingGET (extraHttpRequestParams?: any ) : Observable<{ [key: string]: any; }> {
+    public errorHtmlUsingGET (extraHttpRequestParams?: any ) : Observable<models.ModelAndView> {
         const path = this.basePath + '/error';
 
         let queryParameters = new URLSearchParams();
@@ -94,10 +94,10 @@ export class BasicerrorcontrollerApi {
     }
 
     /**
-     * error
+     * errorHtml
      * 
      */
-    public errorUsingHEAD (extraHttpRequestParams?: any ) : Observable<{ [key: string]: any; }> {
+    public errorHtmlUsingHEAD (extraHttpRequestParams?: any ) : Observable<models.ModelAndView> {
         const path = this.basePath + '/error';
 
         let queryParameters = new URLSearchParams();
@@ -119,10 +119,10 @@ export class BasicerrorcontrollerApi {
     }
 
     /**
-     * error
+     * errorHtml
      * 
      */
-    public errorUsingOPTIONS (extraHttpRequestParams?: any ) : Observable<{ [key: string]: any; }> {
+    public errorHtmlUsingOPTIONS (extraHttpRequestParams?: any ) : Observable<models.ModelAndView> {
         const path = this.basePath + '/error';
 
         let queryParameters = new URLSearchParams();
@@ -144,10 +144,10 @@ export class BasicerrorcontrollerApi {
     }
 
     /**
-     * error
+     * errorHtml
      * 
      */
-    public errorUsingPATCH (extraHttpRequestParams?: any ) : Observable<{ [key: string]: any; }> {
+    public errorHtmlUsingPATCH (extraHttpRequestParams?: any ) : Observable<models.ModelAndView> {
         const path = this.basePath + '/error';
 
         let queryParameters = new URLSearchParams();
@@ -169,10 +169,10 @@ export class BasicerrorcontrollerApi {
     }
 
     /**
-     * error
+     * errorHtml
      * 
      */
-    public errorUsingPOST (extraHttpRequestParams?: any ) : Observable<{ [key: string]: any; }> {
+    public errorHtmlUsingPOST (extraHttpRequestParams?: any ) : Observable<models.ModelAndView> {
         const path = this.basePath + '/error';
 
         let queryParameters = new URLSearchParams();
@@ -194,10 +194,10 @@ export class BasicerrorcontrollerApi {
     }
 
     /**
-     * error
+     * errorHtml
      * 
      */
-    public errorUsingPUT (extraHttpRequestParams?: any ) : Observable<{ [key: string]: any; }> {
+    public errorHtmlUsingPUT (extraHttpRequestParams?: any ) : Observable<models.ModelAndView> {
         const path = this.basePath + '/error';
 
         let queryParameters = new URLSearchParams();
