@@ -9,7 +9,7 @@ import { environment } from '../environments/environment';
   <h1>
     <input type="number" [(ngModel)]="arg1" /> +
     <input type="number" [(ngModel)]="arg2" />
-    <button (click)="add()">add</button>
+    <button (click)="add()">=</button>
     {{result}}
   </h1>
   `,
@@ -23,7 +23,7 @@ export class AppComponent {
   }
   add() {
     if (this.arg1 || this.arg2) {
-      new ApplicationApi(this.http, environment.basePath)
+      new ApplicationApi(this.http, window.location.origin)
         .addUsingGET(this.arg1, this.arg2)
         .subscribe(data=>this.result = data.result);
     }
