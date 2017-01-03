@@ -33,7 +33,12 @@ dependencies {
     testCompile 'io.springfox:springfox-staticdocs:2.6.1'
 }
 
+def SWAGGER_JSON_FILE = 'publications/swagger.json';
+def SWAGGER_CLIENT_DIR = '../frontend/src/swagger';
+
 task generateSwaggerSpec(type: Test, dependsOn: testClasses) {
+    inputs.files fileTree('src/main/java')
+    outputs.file file(SWAGGER_JSON_FILE)
     filter {
         includeTestsMatching "app.SwaggerSpecGenerator"
     }
@@ -47,25 +52,24 @@ dependencies {
     swaggercodegen 'io.swagger:swagger-codegen-cli:2.2.1'
 }
 
-def SWAGGER_CLIENT_DIR = '../frontend/src/swagger';
-
 task cleanSwaggerCodegen(type: Delete) {
-    delete fileTree(SWAGGER_CLIENT_DIR).include('**/*')
+    delete fileTree(SWAGGER_CLIENT_DIR).include('*/*')
 }
 
 task swaggerCodegen(type: JavaExec) {
+    inputs.file file(SWAGGER_JSON_FILE)
+    outputs.dir file(SWAGGER_CLIENT_DIR)
     classpath = configurations.swaggercodegen
     main = 'io.swagger.codegen.SwaggerCodegen'
         args('generate',
         '-l', 'typescript-angular2',
-        '-i', 'publications/swagger.json',
+        '-i', SWAGGER_JSON_FILE,
         '-o', SWAGGER_CLIENT_DIR)
 }
 
-swaggerCodegen.dependsOn cleanSwaggerCodegen
-swaggerCodegen.dependsOn generateSwaggerSpec
-
 task compileFrontend(type:Exec) {
+    inputs.files fileTree('../frontend/src')
+    outputs.dir file('build/resources/main/static')
     workingDir '../frontend'
     ant.condition(property: "isWindows", value: true) { os(family: "windows") }
     commandLine(ant.properties.isWindows ?
@@ -73,6 +77,8 @@ task compileFrontend(type:Exec) {
         ['ng', 'build', '--aot', '--target=production'])
 }
 
+swaggerCodegen.dependsOn generateSwaggerSpec
+compileFrontend.dependsOn swaggerCodegen
 jar.dependsOn compileFrontend
 bootRun.dependsOn compileFrontend
 
