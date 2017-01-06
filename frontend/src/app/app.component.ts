@@ -1,19 +1,18 @@
 import { Component, Input } from '@angular/core';
 import {ApplicationApi} from '../swagger/api/ApplicationApi'
 import {Http} from '@angular/http';
-import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
   template: `
-  <h1>
-    <input type="number" [(ngModel)]="arg1" /> +
-    <input type="number" [(ngModel)]="arg2" />
-    <button (click)="add()">=</button>
+  <div>
+    <md-input-container><input md-input type="number" placeholder="number1" [(ngModel)]="arg1" /></md-input-container> +
+    <md-input-container><input md-input type="number" placeholder="number2" [(ngModel)]="arg2" /></md-input-container> 
+    <button md-mini-fab (click)="add()">=</button>
     {{result}}
-  </h1>
+  </div>
   `,
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   arg1: number;
