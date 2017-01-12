@@ -1,4 +1,4 @@
-# Spring Boot + Angular2 + Swagger Example
+# Spring Boot + Angular2 + Swagger Starter
 
 ## Prerequisites
 
