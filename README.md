@@ -4,7 +4,6 @@
 
 * JDK8
 * [node + npm](https://nodejs.org/) (Current Version)
-* [Angular CLI](https://cli.angular.io/)
 
 ## Run
 
@@ -19,6 +18,7 @@ http://localhost:8080/
 
 ```
 $ cd frontend
+$ npm install
 $ npm start
 ```
 

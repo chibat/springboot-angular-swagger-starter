@@ -67,17 +67,28 @@ task swaggerCodegen(type: JavaExec) {
         '-o', SWAGGER_CLIENT_DIR)
 }
 
+task npmInstall(type:Exec) {
+    inputs.file file('../frontend/package.json')
+    outputs.dir file('../frontend/node_modules')
+    workingDir '../frontend'
+    ant.condition(property: "isWindows", value: true) { os(family: "windows") }
+    commandLine(ant.properties.isWindows ?
+        ['cmd', '/c', 'npm', 'install'] :
+        ['npm', 'install'])
+}
+
 task compileFrontend(type:Exec) {
     inputs.files fileTree('../frontend/src')
     outputs.dir file('build/resources/main/static')
     workingDir '../frontend'
     ant.condition(property: "isWindows", value: true) { os(family: "windows") }
     commandLine(ant.properties.isWindows ?
-        ['cmd', '/c', 'ng', 'build', '--aot', '--target=production'] :
-        ['ng', 'build', '--aot', '--target=production'])
+        ['cmd', '/c', 'npm', 'run', 'buildProduction'] :
+        ['npm', 'run', 'buildProduction'])
 }
 
 swaggerCodegen.dependsOn generateSwaggerSpec
+compileFrontend.dependsOn npmInstall
 compileFrontend.dependsOn swaggerCodegen
 jar.dependsOn compileFrontend
 bootRun.dependsOn compileFrontend
