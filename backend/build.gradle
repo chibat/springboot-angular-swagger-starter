@@ -4,9 +4,11 @@ buildscript {
     }
     repositories {
         mavenCentral()
+        maven {url "https://plugins.gradle.org/m2/"}
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+        classpath "gradle.plugin.com.gorylenko.gradle-git-properties:gradle-git-properties:1.4.17"
     }
 }
 
@@ -94,4 +96,11 @@ compileFrontend.dependsOn swaggerCodegen
 jar.dependsOn compileFrontend
 bootRun.dependsOn compileFrontend
 
+// git information for actuator
+
+apply plugin: 'com.gorylenko.gradle-git-properties'
+
+gitProperties {
+    gitRepositoryRoot = new File("${project.rootDir}/..")
+}
 
