@@ -1,5 +1,10 @@
 # Spring Boot + Angular2 + Swagger Starter
 
+## Feature
+
+* Type safe communication
+* Type saef i18n
+
 ## Prerequisites
 
 * JDK8
