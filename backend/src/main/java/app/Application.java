@@ -14,6 +14,11 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import static springfox.documentation.builders.PathSelectors.regex;
 
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+
 @SpringBootApplication
 @EnableSwagger2
 @RestController
@@ -41,7 +46,18 @@ public class Application {
         }
     }
 
+    private static void openBrowser() {
+        System.setProperty("java.awt.headless", "false");
+        try {
+            Desktop.getDesktop().browse(new URI("http://localhost:8080"));
+        } catch (IOException | URISyntaxException ignore) {
+        }
+    }
+
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
+        if (System.getenv("SPRING_PROFILES_ACTIVE") == null && System.getProperty("spring.profiles.active") == null) {
+            openBrowser();
+        }
     }
 }

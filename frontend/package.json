@@ -5,9 +5,9 @@
   "angular-cli": {},
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --proxy-config proxy.conf.json",
-    "test": "ng test",
-    "buildProduction": "ng build --aot --target=production",
+    "start": "node_modules/.bin/ng serve --proxy-config proxy.conf.json",
+    "test": "node_modules/.bin/ng test",
+    "buildProduction": "node_modules/.bin/ng build --aot --target=production",
     "pree2e": "webdriver-manager update --standalone false --gecko false",
     "e2e": "protractor"
   },
@@ -31,7 +31,7 @@
     "@angular/compiler-cli": "^2.4.1",
     "@types/jasmine": "2.5.38",
     "@types/node": "^6.0.42",
-    "angular-cli": "1.0.0-beta.28.3",
+    "angular-cli": "^1.0.0-beta.28.3",
     "codelyzer": "~2.0.0-beta.1",
     "jasmine-core": "2.5.2",
     "jasmine-spec-reporter": "2.5.0",

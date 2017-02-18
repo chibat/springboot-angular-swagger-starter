@@ -1,30 +1,15 @@
 import { Component, Input } from '@angular/core';
-import {ApplicationApi} from '../swagger/api/ApplicationApi'
-import {Http} from '@angular/http';
+import { CalculatorComponent } from './calculator/calculator.component'
+import { I18nComponent } from './i18n/i18n.component'
 
 @Component({
   selector: 'app-root',
   template: `
-  <div>
-    <md-input-container><input md-input type="number" placeholder="number1" [(ngModel)]="arg1" /></md-input-container> +
-    <md-input-container><input md-input type="number" placeholder="number2" [(ngModel)]="arg2" /></md-input-container> 
-    <button md-mini-fab (click)="add()">=</button>
-    {{result}}
-  </div>
-  `,
-  styleUrls: ['./app.component.css'],
+  <h1>Type safe communication</h1>
+  <app-calculator></app-calculator>
+  <h1>Type saef i18n</h1>
+  <app-i18n></app-i18n>
+  `
 })
 export class AppComponent {
-  arg1: number;
-  arg2: number;
-  result: number;
-  constructor(private http: Http) {
-  }
-  add() {
-    if (this.arg1 || this.arg2) {
-      new ApplicationApi(this.http, window.location.origin)
-        .addUsingGET(this.arg1, this.arg2)
-        .subscribe(data=>this.result = data.result);
-    }
-  }
 }
