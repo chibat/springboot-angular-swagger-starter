@@ -3,7 +3,7 @@
 ## Feature
 
 * Type safe communication
-* Type saef i18n
+* Type safe i18n
 
 ## Prerequisites
 

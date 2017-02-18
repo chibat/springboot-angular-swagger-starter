@@ -7,7 +7,7 @@ import { I18nComponent } from './i18n/i18n.component'
   template: `
   <h1>Type safe communication</h1>
   <app-calculator></app-calculator>
-  <h1>Type saef i18n</h1>
+  <h1>Type safe i18n</h1>
   <app-i18n></app-i18n>
   `
 })
