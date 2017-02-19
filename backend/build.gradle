@@ -9,12 +9,14 @@ buildscript {
     dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
         classpath "gradle.plugin.com.gorylenko.gradle-git-properties:gradle-git-properties:1.4.17"
+        classpath "com.moowork.gradle:gradle-node-plugin:1.1.1"
     }
 }
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
+apply plugin: 'com.moowork.node'
 
 jar {
     baseName = 'app'
@@ -27,7 +29,6 @@ repositories {
     mavenCentral()
 }
 
-
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.springframework.boot:spring-boot-actuator')
@@ -36,11 +37,12 @@ dependencies {
     testCompile 'io.springfox:springfox-staticdocs:2.6.1'
 }
 
-def SWAGGER_JSON_FILE = 'publications/swagger.json';
-def SWAGGER_CLIENT_DIR = '../frontend/src/swagger';
+def FRONTEND_DIR = "${project.rootDir}/../frontend";
+def SWAGGER_JSON_FILE = "${project.rootDir}/publications/swagger.json";
+def SWAGGER_CLIENT_DIR = "${FRONTEND_DIR}/src/swagger";
 
 task generateSwaggerSpec(type: Test, dependsOn: testClasses) {
-    inputs.files fileTree('src/main/java')
+    inputs.files fileTree("${project.rootDir}/src/main/java")
     outputs.file file(SWAGGER_JSON_FILE)
     filter {
         includeTestsMatching "app.SwaggerSpecGenerator"
@@ -70,24 +72,21 @@ task swaggerCodegen(type: JavaExec) {
         '-o', SWAGGER_CLIENT_DIR)
 }
 
-task npmInstall(type:Exec) {
-    inputs.file file('../frontend/package.json')
-    outputs.dir file('../frontend/node_modules')
-    workingDir '../frontend'
-    ant.condition(property: "isWindows", value: true) { os(family: "windows") }
-    commandLine(ant.properties.isWindows ?
-        ['cmd', '/c', 'npm', 'install'] :
-        ['npm', 'install'])
+node {
+    workDir = file(FRONTEND_DIR)
+    nodeModulesDir = file(FRONTEND_DIR)
 }
 
-task compileFrontend(type:Exec) {
-    inputs.files fileTree('../frontend/src')
-    outputs.dir file('build/resources/main/static')
-    workingDir '../frontend'
-    ant.condition(property: "isWindows", value: true) { os(family: "windows") }
-    commandLine(ant.properties.isWindows ?
-        ['cmd', '/c', 'npm', 'run', 'buildProduction'] :
-        ['npm', 'run', 'buildProduction'])
+// task npmInstall(type: NpmTask) {
+//    inputs.file file("${FRONTEND_DIR}/package.json")
+//    outputs.dir file("${FRONTEND_DIR}/node_modules")
+//    args = ['install'];
+// }
+
+task compileFrontend(type: NpmTask) {
+    inputs.files fileTree("${FRONTEND_DIR}/src")
+    outputs.dir file("${project.rootDir}/build/resources/main/static")
+    args = ['run', 'buildProduction'];
 }
 
 swaggerCodegen.dependsOn generateSwaggerSpec
