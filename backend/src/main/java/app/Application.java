@@ -47,6 +47,9 @@ public class Application {
     }
 
     private static void openBrowser() {
+        if (System.getenv("SPRING_PROFILES_ACTIVE") != null || System.getProperty("spring.profiles.active") != null) {
+            return;
+        }
         System.setProperty("java.awt.headless", "false");
         try {
             Desktop.getDesktop().browse(new URI("http://localhost:8080"));
@@ -56,8 +59,6 @@ public class Application {
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
-        if (System.getenv("SPRING_PROFILES_ACTIVE") == null && System.getProperty("spring.profiles.active") == null) {
-            openBrowser();
-        }
+        openBrowser();
     }
 }
