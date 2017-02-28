@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { CalculatorComponent } from './calculator/calculator.component'
-import { I18nComponent } from './i18n/i18n.component'
+import { CalculatorComponent } from './calculator/calculator.component';
+import { I18nComponent } from './i18n/i18n.component';
 
 @Component({
   selector: 'app-root',
