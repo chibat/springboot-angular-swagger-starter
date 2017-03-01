@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ApplicationApi} from '../../swagger/api/ApplicationApi'
+import {ApplicationApi} from '../../swagger/api/ApplicationApi';
 import {Http} from '@angular/http';
 
 @Component({
@@ -26,7 +26,7 @@ export class CalculatorComponent {
     if (this.arg1 || this.arg2) {
       new ApplicationApi(this.http, window.location.origin)
         .addUsingGET(this.arg1, this.arg2)
-        .subscribe(data=>this.result = data.result);
+        .subscribe(data => this.result = data.result);
     }
   }
 }
