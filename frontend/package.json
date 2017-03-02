@@ -9,7 +9,7 @@
     "test": "node_modules/.bin/ng test",
     "lint": "node_modules/.bin/ng lint",
     "e2e": "node_modules/.bin/ng e2e",
-    "buildProduction": "node_modules/.bin/ng build --aot --target=production"
+    "buildProduction": "node_modules/.bin/ng b --aot -t production -op ../backend/build/resources/main/static"
   },
   "private": true,
   "dependencies": {
