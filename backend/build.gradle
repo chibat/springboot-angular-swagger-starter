@@ -86,7 +86,7 @@ node {
 task compileFrontend(type: NpmTask) {
     inputs.files fileTree("${FRONTEND_DIR}/src")
     outputs.dir file("${project.rootDir}/build/resources/main/static")
-    args = ['run', 'buildProduction'];
+    args = ['run', 'build'];
 }
 
 swaggerCodegen.dependsOn generateSwaggerSpec
