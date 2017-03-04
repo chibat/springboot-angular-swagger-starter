@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {lang, setLang, messages} from '../messages';
+import { Router }   from '@angular/router';
 
 @Component({
   selector: 'app-i18n',
@@ -18,7 +19,7 @@ export class I18nComponent implements OnInit {
   ja: boolean;
   msg = messages;
 
-  constructor() {
+  constructor(/* private router: Router */) {
     console.log('constructor');
   }
 
@@ -34,10 +35,14 @@ export class I18nComponent implements OnInit {
   changeEn() {
     setLang('en');
     location.reload();
+    // this.router.navigateByUrl('/dummy', {skipLocationChange: true});
+    // this.router.navigate([""]);
   }
 
   changeJa() {
     setLang('ja');
     location.reload();
+    // this.router.navigateByUrl('/dummy', {skipLocationChange: true});
+    // this.router.navigate([""], {});
   }
 }

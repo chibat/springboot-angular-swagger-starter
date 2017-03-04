@@ -12,7 +12,7 @@ export function setLang(value: string, path?: string, domain?: string, secure?: 
   document.cookie = COOKIE_KEY + '=' + value
     + '; max-age=2147483647'
     + (domain ? '; domain=' + domain : '')
-    + (path ? '; path=' + path : '')
+    + (path ? '; path=' + path : '/')
     + (secure ? '; secure' : '');
 }
 

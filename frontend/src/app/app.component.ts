@@ -1,15 +1,47 @@
-import { Component, Input } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { I18nComponent } from './i18n/i18n.component';
 
 @Component({
   selector: 'app-root',
+  encapsulation: ViewEncapsulation.None,
   template: `
-  <h1>Type safe communication</h1>
-  <app-calculator></app-calculator>
-  <h1>Type safe i18n</h1>
-  <app-i18n></app-i18n>
-  `
+  <md-sidenav-container class="example-container">
+    <md-toolbar color="primary">
+    <button md-mini-fab (click)="sidenav.toggle()">
+      <md-icon>menu</md-icon>
+    </button>
+    <span style="margin-left: 5px;">Spring Boot + Angular2 + Swagger Starter</span>
+    </md-toolbar>
+    <md-sidenav #sidenav mode="over" opened="false" #sidenav class="example-sidenav">
+      <md-list>
+        <md-list-item>
+          <button md-button routerLink="" routerLinkActive="active" (click)="sidenav.toggle()">Type safe communication</button>
+        </md-list-item>
+        <md-list-item>
+          <button md-button routerLink="i18n" routerLinkActive="active" (click)="sidenav.toggle()">Type safe i18n</button>
+        </md-list-item>
+      </md-list>
+    </md-sidenav>
+    <div class="example-sidenav-content">
+    <router-outlet></router-outlet>
+    </div>
+  </md-sidenav-container>
+  `,
+  styles: [`
+    .example-container {
+      height: 100%;
+    }
+    .example-sidenav-content {
+      margin: 8px;
+    }
+    .example-sidenav {
+      background: #3f51b5;
+    }
+    .mat-list .mat-list-item {
+      color: #ffffff
+    }
+  `]
 })
 export class AppComponent {
 }
