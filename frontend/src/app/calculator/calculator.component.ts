@@ -5,6 +5,7 @@ import {Http} from '@angular/http';
 @Component({
   selector: 'app-calculator',
   template: `
+  <h2>Type safe communication</h2>
   <div>
     <md-input-container><input mdInput type="number" placeholder="number1" [(ngModel)]="arg1" /></md-input-container> +
     <md-input-container><input  mdInput type="number" placeholder="number2" [(ngModel)]="arg2" /></md-input-container> 

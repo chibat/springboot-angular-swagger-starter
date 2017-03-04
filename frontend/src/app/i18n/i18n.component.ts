@@ -4,6 +4,7 @@ import {lang, setLang, messages} from '../messages';
 @Component({
   selector: 'app-i18n',
   template: `
+  <h2>Type safe i18n</h2>
   <md-radio-group>
   <md-radio-button value="en" (change)="changeEn()" [checked]="en">English</md-radio-button>
   <md-radio-button value="ja" (change)="changeJa()" [checked]="ja">日本語</md-radio-button>
