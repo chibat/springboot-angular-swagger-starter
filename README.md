@@ -1,5 +1,7 @@
 # Spring Boot + Angular2 + Swagger Starter
 
+[![Build Status](https://travis-ci.org/chibat/springboot-angular2-swagger-starter.svg?branch=master)](https://travis-ci.org/chibat/springboot-angular2-swagger-starter)
+
 ## Feature
 
 * Type safe communication
