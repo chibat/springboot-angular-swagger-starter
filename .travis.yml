@@ -4,5 +4,7 @@ jdk: oraclejdk8
 branches:
   only:
     - develop
-script: build.sh
+script:
+  - cd backend
+  - ./gradlew bootRepackage
 
