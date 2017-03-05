@@ -8,7 +8,7 @@ install:
 
 branches:
   only:
-    - develop
+    - master
 script:
   - cd backend
   - ./gradlew bootRepackage
