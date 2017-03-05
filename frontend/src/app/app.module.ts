@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { RouterModule }   from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -35,7 +35,11 @@ import { ActuatorComponent } from './actuator/actuator.component';
         path: 'actuator',
         component: ActuatorComponent
       },
-    ],{useHash: true}) // SEO false
+      {
+        path: 'actuator/:path',
+        component: ActuatorComponent
+      },
+    ], {useHash: true}) // SEO false
   ],
   bootstrap: [AppComponent]
 })

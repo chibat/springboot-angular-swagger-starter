@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-actuator',
@@ -36,20 +37,27 @@ export class ActuatorComponent implements OnInit {
     'trace'
   ];
 
-  constructor(private http: Http) { }
+  constructor(private http: Http, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
+    this.route.params.subscribe(param => {
+      if (param['path']) {
+        this.path = param['path'];
+        this.response = 'loading ...';
+        this.http.get('/rest/actuator/' + this.path).map(res => {
+          return res.json();
+        }).catch(error => {
+          return error;
+        }).subscribe(json => {
+          this.response = JSON.stringify(json, undefined, 2);
+        }, error => {
+          this.response = error;
+        });
+      }
+    });
   }
 
   change() {
-    this.http.get('/rest/actuator/' + this.path).map(res=>{
-      return res.json()
-    }).catch(error =>{
-      return error;
-    }).subscribe(json=>{
-      this.response = JSON.stringify(json, undefined, 2);
-    }, error =>{
-      console.error(error);
-    });
+    this.router.navigate(['/actuator', this.path]);
   }
 }
