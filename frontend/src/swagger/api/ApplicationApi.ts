@@ -50,7 +50,7 @@ export class ApplicationApi {
      * @param arg2 arg2
      */
     public addUsingGET (arg1: number, arg2: number, extraHttpRequestParams?: any ) : Observable<models.Response> {
-        const path = this.basePath + '/rest/add';
+        const path = this.basePath + '/rest/api/add';
 
         let queryParameters = new URLSearchParams();
         let headerParams = this.defaultHeaders;

@@ -24,7 +24,7 @@ import java.net.URISyntaxException;
 @RestController
 public class Application {
 
-    @GetMapping("/rest/add")
+    @GetMapping("/rest/api/add")
     public Response add(@RequestParam Integer arg1, @RequestParam Integer arg2) {
         return new Response(arg1 + arg2);
     }
@@ -34,7 +34,7 @@ public class Application {
         return new Docket(DocumentationType.SWAGGER_2)
             .select()
             .apis(RequestHandlerSelectors.any())
-            .paths(regex("^/rest/.*$"))
+            .paths(regex("^/rest/api/.*$"))
             .build();
     }
 

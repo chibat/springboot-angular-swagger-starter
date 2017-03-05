@@ -1,5 +1,5 @@
 management:
   security.enabled: false
   info.git.mode: full
-  context-path: /actuator
+  context-path: /rest/actuator
 

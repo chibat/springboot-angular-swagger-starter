@@ -21,6 +21,9 @@ import { I18nComponent } from './i18n/i18n.component';
         <md-list-item>
           <button md-button routerLink="i18n" routerLinkActive="active" (click)="sidenav.toggle()">Type safe i18n</button>
         </md-list-item>
+        <md-list-item>
+          <button md-button routerLink="actuator" routerLinkActive="active" (click)="sidenav.toggle()">Actuator</button>
+        </md-list-item>
       </md-list>
     </md-sidenav>
     <div class="example-sidenav-content">

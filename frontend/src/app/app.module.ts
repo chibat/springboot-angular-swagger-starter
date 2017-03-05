@@ -8,12 +8,14 @@ import { MaterialModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { I18nComponent } from './i18n/i18n.component';
 import { CalculatorComponent } from './calculator/calculator.component';
+import { ActuatorComponent } from './actuator/actuator.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     I18nComponent,
-    CalculatorComponent
+    CalculatorComponent,
+    ActuatorComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,11 @@ import { CalculatorComponent } from './calculator/calculator.component';
         path: 'i18n',
         component: I18nComponent
       },
-    ],{useHash: false})
+      {
+        path: 'actuator',
+        component: ActuatorComponent
+      },
+    ],{useHash: true}) // SEO false
   ],
   bootstrap: [AppComponent]
 })
