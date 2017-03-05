@@ -4,5 +4,5 @@ jdk: oraclejdk8
 branches:
   only:
     - develop
-
+script: build.sh
 
