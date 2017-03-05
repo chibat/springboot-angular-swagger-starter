@@ -13,3 +13,8 @@ script:
   - cd backend
   - ./gradlew bootRepackage
 
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+
