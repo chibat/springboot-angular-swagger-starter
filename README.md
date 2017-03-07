@@ -1,4 +1,4 @@
-# Spring Boot <- Swagger -> Angular2 Starter
+# Spring Boot <-> Swagger <-> Angular2 Starter
 
 [![Build Status](https://travis-ci.org/chibat/springboot-angular2-swagger-starter.svg?branch=master)](https://travis-ci.org/chibat/springboot-angular2-swagger-starter)
 
@@ -6,6 +6,10 @@
 
 * Type safe communication
 * Type safe i18n
+
+## Architecture
+
+<img src="https://docs.google.com/drawings/d/1VcTUJNS3Qduj7kTeLohR1n7sKepFp3p0WVhF-SR0oMs/pub?w=638&amp;h=372">
 
 ## Prerequisites
 
