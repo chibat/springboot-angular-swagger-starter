@@ -33,7 +33,7 @@ import 'rxjs/Rx';
 'use strict';
 
 @Injectable()
-export class ApplicationApi {
+export class CalculatorApi {
     protected basePath = 'https://localhost/';
     public defaultHeaders : Headers = new Headers();
 
@@ -49,18 +49,18 @@ export class ApplicationApi {
      * @param arg1 arg1
      * @param arg2 arg2
      */
-    public addUsingGET (arg1: number, arg2: number, extraHttpRequestParams?: any ) : Observable<models.Response> {
+    public add (arg1: number, arg2: number, extraHttpRequestParams?: any ) : Observable<models.Response> {
         const path = this.basePath + '/rest/api/add';
 
         let queryParameters = new URLSearchParams();
         let headerParams = this.defaultHeaders;
         // verify required parameter 'arg1' is not null or undefined
         if (arg1 === null || arg1 === undefined) {
-            throw new Error('Required parameter arg1 was null or undefined when calling addUsingGET.');
+            throw new Error('Required parameter arg1 was null or undefined when calling add.');
         }
         // verify required parameter 'arg2' is not null or undefined
         if (arg2 === null || arg2 === undefined) {
-            throw new Error('Required parameter arg2 was null or undefined when calling addUsingGET.');
+            throw new Error('Required parameter arg2 was null or undefined when calling add.');
         }
         if (arg1 !== undefined) {
             queryParameters.set('arg1', String(arg1));

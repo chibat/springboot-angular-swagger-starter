@@ -91,6 +91,7 @@ task compileFrontend(type: NpmTask) {
 }
 
 swaggerCodegen.dependsOn generateSwaggerSpec
+swaggerCodegen.dependsOn cleanSwaggerCodegen
 compileFrontend.dependsOn npmInstall
 compileFrontend.dependsOn swaggerCodegen
 jar.dependsOn compileFrontend
