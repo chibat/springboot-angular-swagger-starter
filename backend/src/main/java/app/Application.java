@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import lombok.Value;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
@@ -38,12 +39,9 @@ public class Application {
             .build();
     }
 
+    @Value
     public static class Response {
-        public final Integer result;
-
-        public Response(final Integer result) {
-            this.result = result;
-        }
+        private final Integer result;
     }
 
     private static void openBrowser() {
