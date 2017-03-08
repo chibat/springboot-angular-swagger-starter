@@ -49,9 +49,15 @@ public class Application {
     }
 
     private static void openBrowser() {
+
         if (System.getenv("SPRING_PROFILES_ACTIVE") != null || System.getProperty("spring.profiles.active") != null) {
             return;
         }
+
+        if (Application.class.getResource("/static/index.html") == null) {
+            return;
+        }
+
         System.setProperty("java.awt.headless", "false");
         try {
             Desktop.getDesktop().browse(new URI("http://localhost:8080"));
