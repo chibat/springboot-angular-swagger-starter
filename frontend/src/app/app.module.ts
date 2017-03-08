@@ -39,7 +39,7 @@ import { ActuatorComponent } from './actuator/actuator.component';
         path: 'actuator/:path',
         component: ActuatorComponent
       },
-    ], {useHash: true}) // SEO false
+    ], {useHash: false}) // SEO false
   ],
   bootstrap: [AppComponent]
 })
