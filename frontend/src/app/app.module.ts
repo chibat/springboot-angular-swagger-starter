@@ -10,6 +10,7 @@ import { BlankComponent } from './blank.component';
 import { I18nComponent } from './i18n/i18n.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { ActuatorComponent } from './actuator/actuator.component';
+import { ApiDocsComponent } from './api-docs/api-docs.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ActuatorComponent } from './actuator/actuator.component';
     BlankComponent,
     I18nComponent,
     CalculatorComponent,
-    ActuatorComponent
+    ActuatorComponent,
+    ApiDocsComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +46,10 @@ import { ActuatorComponent } from './actuator/actuator.component';
       {
         path: 'actuator/:path',
         component: ActuatorComponent
+      },
+      {
+        path: 'api-docs',
+        component: ApiDocsComponent
       },
     ], {useHash: false}) // SEO false
   ],
