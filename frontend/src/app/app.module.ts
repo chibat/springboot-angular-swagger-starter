@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
+import { BlankComponent } from './blank.component';
 import { I18nComponent } from './i18n/i18n.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { ActuatorComponent } from './actuator/actuator.component';
@@ -13,6 +14,7 @@ import { ActuatorComponent } from './actuator/actuator.component';
 @NgModule({
   declarations: [
     AppComponent,
+    BlankComponent,
     I18nComponent,
     CalculatorComponent,
     ActuatorComponent
@@ -26,6 +28,10 @@ import { ActuatorComponent } from './actuator/actuator.component';
       {
         path: '',
         component: CalculatorComponent
+      },
+      {
+        path: 'blank',
+        component: BlankComponent
       },
       {
         path: 'i18n',

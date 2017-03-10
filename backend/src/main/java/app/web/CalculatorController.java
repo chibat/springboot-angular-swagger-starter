@@ -8,10 +8,10 @@ import io.swagger.annotations.ApiOperation;
 import lombok.Value;
 
 @RestController
-public class Calculator {
+public class CalculatorController {
 
     @GetMapping("/rest/api/add")
-    @ApiOperation(value = "add", nickname = "add")
+    @ApiOperation(value = "add", tags = "calculator", nickname = "add")
     public Response add(@RequestParam Integer arg1, @RequestParam Integer arg2) {
         return new Response(arg1 + arg2);
     }

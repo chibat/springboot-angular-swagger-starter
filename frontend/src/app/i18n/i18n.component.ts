@@ -34,11 +34,11 @@ export class I18nComponent implements OnInit {
 
   changeEn() {
     setLang('en');
-    this.router.navigate(['']).then(b=>{this.router.navigate(['i18n'])});
+    this.router.navigate(['blank']).then(b=>{this.router.navigate(['i18n'])});
   }
 
   changeJa() {
     setLang('ja');
-    this.router.navigate(['']).then(b=>{this.router.navigate(['i18n'])});
+    this.router.navigate(['blank']).then(b=>{this.router.navigate(['i18n'])});
   }
 }
