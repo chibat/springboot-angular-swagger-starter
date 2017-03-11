@@ -1,8 +1,7 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component  } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  encapsulation: ViewEncapsulation.None,
   template: `
   <md-sidenav-container class="example-container">
     <md-toolbar color="primary">
@@ -13,6 +12,9 @@ import { Component, ViewEncapsulation } from '@angular/core';
     </md-toolbar>
     <md-sidenav #sidenav mode="over" opened="false" #sidenav class="example-sidenav">
       <md-list>
+        <md-list-item>
+          <button md-button routerLink="todo" routerLinkActive="active" (click)="sidenav.toggle()">Todo</button>
+        </md-list-item>
         <md-list-item>
           <button md-button routerLink="" routerLinkActive="active" (click)="sidenav.toggle()">Type safe communication</button>
         </md-list-item>

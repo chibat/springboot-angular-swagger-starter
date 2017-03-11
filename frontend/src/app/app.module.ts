@@ -11,6 +11,7 @@ import { I18nComponent } from './i18n/i18n.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { ActuatorComponent } from './actuator/actuator.component';
 import { ApiDocsComponent } from './api-docs/api-docs.component';
+import { TodoComponent } from './todo/todo.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ApiDocsComponent } from './api-docs/api-docs.component';
     I18nComponent,
     CalculatorComponent,
     ActuatorComponent,
-    ApiDocsComponent
+    ApiDocsComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +36,10 @@ import { ApiDocsComponent } from './api-docs/api-docs.component';
       {
         path: 'blank',
         component: BlankComponent
+      },
+      {
+        path: 'todo',
+        component: TodoComponent
       },
       {
         path: 'i18n',
