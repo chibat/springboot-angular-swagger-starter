@@ -9,7 +9,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
     <button md-mini-fab (click)="sidenav.toggle()">
       <md-icon>menu</md-icon>
     </button>
-    <span style="margin-left: 5px;">Spring Boot + Angular2 + Swagger Starter</span>
+    <span style="margin-left: 5px;">Spring Boot + Angular + Swagger Starter</span>
     </md-toolbar>
     <md-sidenav #sidenav mode="over" opened="false" #sidenav class="example-sidenav">
       <md-list>
