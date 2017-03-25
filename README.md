@@ -1,4 +1,4 @@
-# Spring Boot -> Swagger => Angular2 Starter
+# Spring Boot -> Swagger => Angular Starter
 
 [![Build Status](https://travis-ci.org/chibat/springboot-angular2-swagger-starter.svg?branch=master)](https://travis-ci.org/chibat/springboot-angular2-swagger-starter)
 
