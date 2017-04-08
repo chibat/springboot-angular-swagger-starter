@@ -36,7 +36,21 @@ $ npm start
 Open following URL by Web browser.  
 http://localhost:4200/
 
-## blog
+## Appendix
+
+### Visual Studio Code
+
+https://code.visualstudio.com/
+
+#### Angular Language Service
+
+https://marketplace.visualstudio.com/items?itemName=Angular.ng-template
+
+#### angular2-inline
+
+https://marketplace.visualstudio.com/items?itemName=natewallace.angular2-inline
+
+### blog
 
 [Japanese](http://tc.hatenablog.com/entry/2017/01/02/185917)
 
