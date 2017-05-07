@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '1.5.1.RELEASE'
+        springBootVersion = '1.5.3.RELEASE'
     }
     repositories {
         mavenCentral()
@@ -55,7 +55,7 @@ configurations {
 }
 
 dependencies {
-    swaggercodegen 'io.swagger:swagger-codegen-cli:2.2.1'
+    swaggercodegen 'io.swagger:swagger-codegen-cli:2.2.1' // skip 2.2.2
 }
 
 task cleanSwaggerCodegen(type: Delete) {
