@@ -27,7 +27,7 @@ import { ApiDocsComponent } from './api-docs/api-docs.component';
     FormsModule,
     HttpModule,
     BrowserAnimationsModule,
-    MaterialModule.forRoot(),
+    MaterialModule,
     RouterModule.forRoot([
       {
         path: '',
