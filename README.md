@@ -19,7 +19,7 @@
 ## Run
 
 ```
-$ cd backend
+$ cd appname-backend
 $ ./gradlew bootRun
 ```
 Open following URL by Web browser.  
@@ -28,7 +28,7 @@ http://localhost:8080/
 ## Run frontend dev server
 
 ```
-$ cd frontend
+$ cd appname-frontend
 $ npm install
 $ npm start
 ```

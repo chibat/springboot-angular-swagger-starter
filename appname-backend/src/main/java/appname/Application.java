@@ -1,4 +1,4 @@
-package app;
+package appname;
 
 import static springfox.documentation.builders.PathSelectors.regex;
 

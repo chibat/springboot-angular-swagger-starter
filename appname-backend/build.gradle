@@ -19,7 +19,7 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'com.moowork.node'
 
 jar {
-    baseName = 'app'
+    baseName = 'appname'
     version = '0.0.1-SNAPSHOT'
 }
 sourceCompatibility = 1.8
@@ -39,7 +39,7 @@ dependencies {
     testCompile 'io.springfox:springfox-staticdocs:2.6.1'
 }
 
-def FRONTEND_DIR = "${project.rootDir}/../frontend";
+def FRONTEND_DIR = "${project.rootDir}/../appname-frontend";
 def SWAGGER_JSON_FILE = "${project.rootDir}/publications/swagger.json";
 def SWAGGER_CLIENT_DIR = "${FRONTEND_DIR}/src/swagger";
 
@@ -47,7 +47,7 @@ task generateSwaggerSpec(type: Test, dependsOn: testClasses) {
     inputs.files fileTree("${project.rootDir}/src/main/java")
     outputs.file file(SWAGGER_JSON_FILE)
     filter {
-        includeTestsMatching "app.SwaggerSpecGenerator"
+        includeTestsMatching "appname.SwaggerSpecGenerator"
     }
 }
 
