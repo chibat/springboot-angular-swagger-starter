@@ -11,7 +11,7 @@ branches:
     - master
 script:
   - cd appname-backend
-  - ./gradlew bootRepackage
+  - bash gradlew bootRepackage
 
 cache:
   directories:
