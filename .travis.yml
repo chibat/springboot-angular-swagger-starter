@@ -10,12 +10,12 @@ branches:
   only:
     - master
 script:
-  - cd backend
+  - cd appname-backend
   - ./gradlew bootRepackage
 
 cache:
   directories:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
-    - frontend/node_modules
+    - appname-frontend/node_modules
 
