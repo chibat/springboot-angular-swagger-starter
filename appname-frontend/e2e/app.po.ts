@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-export class ClientPage {
+export class AppnameFrontendPage {
   navigateTo() {
     return browser.get('/');
   }

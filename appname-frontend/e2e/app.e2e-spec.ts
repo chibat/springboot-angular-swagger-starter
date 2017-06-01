@@ -1,14 +1,16 @@
-import { ClientPage } from './app.po';
+import { AppnameFrontendPage } from './app.po';
 
-describe('client App', () => {
-  let page: ClientPage;
+describe('appname-frontend App', () => {
+  let page: AppnameFrontendPage;
 
   beforeEach(() => {
-    page = new ClientPage();
+    page = new AppnameFrontendPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display welcome message', done => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    page.getParagraphText()
+      .then(msg => expect(msg).toEqual('Welcome to app!!'))
+      .then(done, done.fail);
   });
 });
