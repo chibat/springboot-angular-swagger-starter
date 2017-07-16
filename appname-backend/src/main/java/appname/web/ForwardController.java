@@ -1,4 +1,4 @@
-package appname.controller;
+package appname.web;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;

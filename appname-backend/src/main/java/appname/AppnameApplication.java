@@ -22,7 +22,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableSwagger2
-public class Application {
+public class AppnameApplication {
 
     @Bean
     public Docket documentation() {
@@ -44,7 +44,7 @@ public class Application {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(AppnameApplication.class, args);
         openBrowser();
     }
 
@@ -54,7 +54,7 @@ public class Application {
             return;
         }
 
-        if (Application.class.getResource("/static/index.html") == null) {
+        if (AppnameApplication.class.getResource("/static/index.html") == null) {
             return;
         }
 

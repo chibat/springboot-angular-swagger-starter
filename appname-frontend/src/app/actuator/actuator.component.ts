@@ -44,13 +44,9 @@ export class ActuatorComponent implements OnInit {
       if (param['path']) {
         this.path = param['path'];
         this.response = 'loading ...';
-        this.http.get('/rest/actuator/' + this.path).map(res => {
-          return res.json();
-        }).catch(error => {
-          return error;
-        }).subscribe(json => {
-          this.response = JSON.stringify(json, undefined, 2);
-        }, error => {
+        this.http.get('/rest/actuator/' + this.path).subscribe(res => {
+          this.response = JSON.stringify(res.json(), undefined, 2);
+        }, error =>{
           this.response = error;
         });
       }

@@ -1,4 +1,4 @@
-package appname.controller;
+package appname.web;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
