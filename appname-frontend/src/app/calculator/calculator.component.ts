@@ -25,7 +25,7 @@ export class CalculatorComponent {
 
   add() {
     if (this.arg1 || this.arg2) {
-      new CalculatorApi(this.http, window.location.origin)
+      new CalculatorApi(this.http, window.location.origin, null)
         .add(this.arg1, this.arg2)
         .subscribe(data => this.result = data.result);
     }
