@@ -11,7 +11,6 @@ import { BlankComponent } from './blank.component';
 import { I18nComponent } from './i18n/i18n.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { ActuatorComponent } from './actuator/actuator.component';
-import { ApiDocsComponent } from './api-docs/api-docs.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +19,6 @@ import { ApiDocsComponent } from './api-docs/api-docs.component';
     I18nComponent,
     CalculatorComponent,
     ActuatorComponent,
-    ApiDocsComponent
   ],
   imports: [
     BrowserModule,
@@ -48,10 +46,6 @@ import { ApiDocsComponent } from './api-docs/api-docs.component';
       {
         path: 'actuator/:path',
         component: ActuatorComponent
-      },
-      {
-        path: 'api-docs',
-        component: ApiDocsComponent
       },
     ], {useHash: false}) // SEO false
   ],

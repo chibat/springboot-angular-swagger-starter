@@ -22,9 +22,6 @@ import { Component, ViewEncapsulation } from '@angular/core';
         <md-list-item>
           <button md-button routerLink="actuator" routerLinkActive="active" (click)="sidenav.toggle()">Actuator</button>
         </md-list-item>
-        <md-list-item>
-          <button md-button routerLink="api-docs" routerLinkActive="active" (click)="sidenav.toggle()">API Docs</button>
-        </md-list-item>
       </md-list>
     </md-sidenav>
     <div class="example-sidenav-content">

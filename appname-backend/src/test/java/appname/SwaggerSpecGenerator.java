@@ -14,11 +14,11 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import appname.AppnameApplication;
+import appname.AppnameApplicationForCodeGen;
 import springfox.documentation.staticdocs.SwaggerResultHandler;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes=AppnameApplication.class)
+@SpringBootTest(classes=AppnameApplicationForCodeGen.class)
 public class SwaggerSpecGenerator {
 
     @Autowired
