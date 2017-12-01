@@ -1,0 +1,12 @@
+.example-container {
+  height: 100%;
+}
+.example-sidenav-content {
+  margin: 8px;
+}
+.example-sidenav {
+  background: #3f51b5;
+}
+.mat-list .mat-list-item {
+  color: #ffffff
+}

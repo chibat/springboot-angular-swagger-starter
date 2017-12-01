@@ -4,7 +4,19 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-import { MaterialModule } from '@angular/material';
+
+import {
+  MatSidenavModule,
+  MatInputModule,
+  MatIconModule,
+  MatToolbarModule,
+  MatListModule,
+  MatRadioModule,
+  MatFormFieldModule,
+  MatSelectModule,
+  MatOptionModule,
+  MatButtonModule,
+} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { BlankComponent } from './blank.component';
@@ -25,7 +37,16 @@ import { ActuatorComponent } from './actuator/actuator.component';
     FormsModule,
     HttpModule,
     BrowserAnimationsModule,
-    MaterialModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatInputModule,
+    MatToolbarModule,
+    MatListModule,
+    MatRadioModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatButtonModule,
     RouterModule.forRoot([
       {
         path: '',
@@ -49,6 +70,7 @@ import { ActuatorComponent } from './actuator/actuator.component';
       },
     ], {useHash: false}) // SEO false
   ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

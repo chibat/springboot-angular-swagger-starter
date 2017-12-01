@@ -71,6 +71,7 @@ task swaggerCodegen(type: JavaExec) {
     main = 'io.swagger.codegen.SwaggerCodegen'
         args('generate',
         '-l', 'typescript-angular2',
+        '-t', 'template',
         '-i', SWAGGER_JSON_FILE,
         '-o', SWAGGER_CLIENT_DIR)
 }

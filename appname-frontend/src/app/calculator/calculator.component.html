@@ -1,0 +1,7 @@
+<h2>Type safe communication</h2>
+<div>
+  <mat-form-field><input matInput type="number" placeholder="number1" [(ngModel)]="arg1" /></mat-form-field> +
+  <mat-form-field><input matInput type="number" placeholder="number2" [(ngModel)]="arg2" /></mat-form-field>
+  <button mat-mini-fab (click)="add()">=</button>
+  {{result}}
+</div>

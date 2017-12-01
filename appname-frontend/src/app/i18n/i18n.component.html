@@ -1,0 +1,6 @@
+<h2>Type safe i18n</h2>
+<mat-radio-group>
+<mat-radio-button value="en" (change)="changeEn()" [checked]="en">English</mat-radio-button>
+<mat-radio-button value="ja" (change)="changeJa()" [checked]="ja">日本語</mat-radio-button>
+<div>{{msg.title}}</div>
+</mat-radio-group>

@@ -1,0 +1,12 @@
+<h2>Actuator</h2>
+<div style="margin-bottom: 20px">
+<a mat-button href="/rest/actuator/heapdump"><mat-icon>file_download</mat-icon>heapdump</a>
+</div>
+<mat-form-field>
+<mat-select placeholder="Path" [(ngModel)]="path" (change)="change()">
+  <mat-option *ngFor="let p of paths" [value]="p">{{p}}</mat-option>
+</mat-select>
+</mat-form-field>
+<pre *ngIf="response">
+  {{response}}
+</pre>
