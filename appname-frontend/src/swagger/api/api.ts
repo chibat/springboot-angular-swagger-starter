@@ -1,3 +1,3 @@
-export * from './CalculatorApi';
-import { CalculatorApi } from './CalculatorApi';
-export const APIS = [CalculatorApi];
+export * from './calculator.service';
+import { CalculatorService } from './calculator.service';
+export const APIS = [CalculatorService];

@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '1.5.4.RELEASE'
+        springBootVersion = '1.5.9.RELEASE'
     }
     repositories {
         mavenCentral()
@@ -57,7 +57,7 @@ configurations {
 }
 
 dependencies {
-    swaggercodegen 'io.swagger:swagger-codegen-cli:2.2.3'
+    swaggercodegen 'io.swagger:swagger-codegen-cli:2.3.0'
 }
 
 task cleanSwaggerCodegen(type: Delete) {
@@ -70,7 +70,7 @@ task swaggerCodegen(type: JavaExec) {
     classpath = configurations.swaggercodegen
     main = 'io.swagger.codegen.SwaggerCodegen'
         args('generate',
-        '-l', 'typescript-angular2',
+        '-l', 'typescript-angular',
         '-t', 'template',
         '-i', SWAGGER_JSON_FILE,
         '-o', SWAGGER_CLIENT_DIR)

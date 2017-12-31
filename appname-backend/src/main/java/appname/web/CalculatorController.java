@@ -12,7 +12,7 @@ public class CalculatorController {
 
     @GetMapping("/rest/api/add")
     @ApiOperation(value = "add", tags = "calculator", nickname = "add")
-    public Response add(@RequestParam Integer arg1, @RequestParam Integer arg2) {
+    public Response add(@RequestParam final Integer arg1, @RequestParam final Integer arg2) {
         return new Response(arg1 + arg2);
     }
 

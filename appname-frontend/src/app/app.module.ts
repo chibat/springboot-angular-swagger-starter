@@ -2,8 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { BASE_PATH } from '../swagger/variables';
+import { CalculatorService } from '../swagger/api/calculator.service';
 
 import {
   MatSidenavModule,
@@ -35,7 +37,7 @@ import { ActuatorComponent } from './actuator/actuator.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatSidenavModule,
     MatIconModule,
@@ -70,7 +72,7 @@ import { ActuatorComponent } from './actuator/actuator.component';
       },
     ], {useHash: false}) // SEO false
   ],
-  providers: [],
+  providers: [ CalculatorService, {provide: BASE_PATH, useValue: window.location.origin}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

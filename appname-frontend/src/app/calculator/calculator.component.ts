@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {CalculatorApi} from '../../swagger/api/CalculatorApi';
+import { Component, OnInit } from '@angular/core';
+import { CalculatorService } from '../../swagger/api/calculator.service';
 import {Http} from '@angular/http';
 
 @Component({
@@ -12,12 +12,12 @@ export class CalculatorComponent {
   arg2: number;
   result: number;
 
-  constructor(private http: Http) {
+  constructor(private  calculatorService: CalculatorService) {
   }
 
   add() {
     if (this.arg1 || this.arg2) {
-      new CalculatorApi(this.http, window.location.origin, null)
+      this.calculatorService
         .add(this.arg1, this.arg2)
         .subscribe(data => this.result = data.result);
     }
