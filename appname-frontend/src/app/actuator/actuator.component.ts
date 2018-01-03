@@ -35,7 +35,7 @@ export class ActuatorComponent implements OnInit {
         this.response = 'loading ...';
         this.httpClient.get('/rest/actuator/' + this.path).subscribe(res => {
           this.response = JSON.stringify(res, undefined, 2);
-        }, error =>{
+        }, error => {
           this.response = error;
         });
       }

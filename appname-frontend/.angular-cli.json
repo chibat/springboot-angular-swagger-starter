@@ -37,11 +37,11 @@
   "lint": [
     {
       "project": "src/tsconfig.app.json",
-      "exclude": "**/node_modules/**"
+      "exclude": ["**/node_modules/**", "**/swagger/**"]
     },
     {
       "project": "src/tsconfig.spec.json",
-      "exclude": "**/node_modules/**"
+      "exclude": ["**/node_modules/**", "**/swagger/**"]
     },
     {
       "project": "e2e/tsconfig.e2e.json",
