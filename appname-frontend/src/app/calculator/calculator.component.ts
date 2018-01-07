@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CalculatorService } from '../../swagger/api/calculator.service';
-import {Http} from '@angular/http';
 
 @Component({
   selector: 'app-calculator',
