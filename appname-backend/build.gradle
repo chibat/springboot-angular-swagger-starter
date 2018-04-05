@@ -61,7 +61,7 @@ dependencies {
 }
 
 task cleanSwaggerCodegen(type: Delete) {
-    delete fileTree(SWAGGER_CLIENT_DIR).include('*/*')
+    delete fileTree(SWAGGER_CLIENT_DIR).include('**/*')
 }
 
 task swaggerCodegen(type: JavaExec) {
