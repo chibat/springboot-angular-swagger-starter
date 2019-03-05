@@ -1,3 +1,7 @@
+
+This repository is old.  
+see [the new version](https://github.com/chibat/spring-openapi-angular-starter) !
+
 # Spring Boot -> Swagger => Angular Starter
 
 [![Build Status](https://travis-ci.org/chibat/springboot-angular-swagger-starter.svg?branch=master)](https://travis-ci.org/chibat/springboot-angular-swagger-starter)
